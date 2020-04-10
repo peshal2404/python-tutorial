@@ -11,4 +11,3 @@ now = f.read()
 print ("Today is ", now)
 subprocess.call(["cat", "/etc/resolv.conf"])
 
-eee
