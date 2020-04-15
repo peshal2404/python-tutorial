@@ -2,18 +2,27 @@
 import mysql.connector
 import os
 import subprocess
-import requests 
+import requests
 import sys
+# response = requests.get("http://api.open-notify.org/this-api-doesnt-exist")
+# print(response.status_code)
+response = requests.get("http://api.open-notify.org/astros.json")
+print(response.status_code)
+print(response.json())
 f = os.popen('date')
 now = f.read()
 print ("Today is ", now)
-subprocess.call(["cat", "/etc/resolv.conf"])
-###MySQL###
 
+import json
+def jprint(obj):
+    # create a formatted string of the Python JSON object
+    text = json.dumps(obj, sort_keys=True, indent=4)
+    print(text)
+jprint(response.json())
+#subprocess.call(["cat", "/etc/resolv.conf"])
+###MySQL###
 # import mysql.connector
-#
 # from mysql.connector import errorcode
-#
 # try:
 #   cnx = mysql.connector.connect(user='scott',
 #                                 database='employ')
@@ -27,7 +36,7 @@ subprocess.call(["cat", "/etc/resolv.conf"])
 # else:
 #   cnx.close()
 
-Home_Dir = /Users/peshal/Downloads
+#Home_Dir = /Users/peshal/Downloads
 
 
 
